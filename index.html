@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta name="theme-color" content="#100b1b">
+  <meta name="description" content="حكاية واعتذار صغير من القلب إلى Nino.">
+
+  <title>Nino ♡ حكاية حب</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{color-scheme:dark;--bg:#100b1b;--bg2:#211027;--bg3:#4b2146;--plum:#3b1837;--rose:#f0a9c1;--pink:#ffd9e5;--gold:#f2d2a2;--muted:#d6b4c6;--glass:rgba(255,239,247,.075);--line:rgba(255,217,229,.2);--heading:#fff0f5;--glow-pink:#e85d99;--glow-violet:#8b70df;--button-light:#ffe1e9;--button-mid:#e9a4bd;--button-dark:#d48cae;--button-ink:#35172c}
+
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;color:var(--pink);font-family:'Cairo',sans-serif;line-height:1.9;overflow-x:hidden;background:radial-gradient(ellipse at top,var(--bg3) 0%,var(--bg2) 35%,var(--bg) 78%);}
+
+    button,input{font:inherit} button{cursor:pointer;color:inherit;-webkit-tap-highlight-color:transparent} button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+
+    #sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+    .glow{position:fixed;width:260px;height:260px;border-radius:50%;filter:blur(75px);opacity:.18;pointer-events:none;z-index:0;background:var(--glow-pink);top:15%;left:-100px}
+
+    .glow.two{background:var(--glow-violet);top:auto;left:auto;right:-120px;bottom:8%}
+
+    .wrap{position:relative;z-index:1;width:min(760px,100%);margin:auto;padding:24px 18px 70px}
+
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+
+    .brand{font-family:'Aref Ruqaa',serif;font-size:1.45rem;color:var(--gold)} .pill{border:1px solid var(--line);background:var(--glass);border-radius:999px;padding:7px 13px;font-size:.85rem;color:var(--muted)}
+
+    .hero{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 8px 38px}
+
+    .heart{font-size:clamp(4rem,16vw,7rem);line-height:1;filter:drop-shadow(0 0 24px rgba(240,169,193,.45));animation:heartbeat 2s infinite;display:block;margin-bottom:20px}
+
+    h1,h2,p{margin-top:0} h1{font-family:'Aref Ruqaa',serif;font-size:clamp(2.25rem,8vw,4.5rem);line-height:1.45;margin-bottom:10px;color:var(--heading);text-shadow:0 0 28px rgba(240,169,193,.24)}
+
+    .hero p{color:var(--muted);font-size:clamp(1rem,3.7vw,1.25rem);max-width:560px;margin:0 auto 24px}
+
+    .primary,.secondary,.music-btn{border-radius:999px;padding:12px 23px;border:1px solid var(--line);transition:transform .25s,box-shadow .25s,background .25s}
+
+    .primary{background:linear-gradient(135deg,var(--button-light),var(--button-mid) 55%,var(--button-dark));color:var(--button-ink);font-weight:800;box-shadow:0 10px 35px rgba(226,128,169,.2)}
+
+    .secondary,.music-btn{background:var(--glass);backdrop-filter:blur(12px);color:var(--pink)}
+
+    .primary:hover,.secondary:hover,.music-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(226,128,169,.18)}
+
+    .section{margin:24px 0 34px;padding:clamp(20px,5vw,34px);border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(255,240,247,.09),rgba(255,240,247,.035));box-shadow:0 18px 55px rgba(0,0,0,.15);backdrop-filter:blur(12px);text-align:center}
+
+    .eyebrow{color:var(--gold);font-size:.9rem;letter-spacing:.04em;margin-bottom:6px}.section h2{font-family:'Aref Ruqaa',serif;font-size:clamp(1.7rem,5vw,2.4rem);margin-bottom:10px;color:var(--heading)}
+
+    .quote{font-family:'Amiri',serif;font-size:clamp(1.45rem,5vw,2rem);white-space:pre-line;min-height:112px;display:grid;place-items:center;padding:10px 0;color:var(--heading);transition:opacity .25s}
+
+    .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+    .letter-btn{font-size:3rem;background:none;border:0;filter:drop-shadow(0 0 12px rgba(240,169,193,.3));transition:transform .3s}.letter-btn:hover{transform:rotate(-8deg) scale(1.08)}
+
+    .letter{display:none;text-align:right;white-space:pre-line;margin-top:16px;padding:22px;border-radius:18px;background:linear-gradient(135deg,#fff0f5,#f3d9e5);color:#4b1d3d;font-family:'Amiri',serif;font-size:1.35rem;line-height:2.1;animation:rise .5s ease both}.letter.open{display:block}
+
+    .music-panel{display:grid;gap:12px}.music-panel p{color:var(--muted);margin-bottom:0;font-size:.95rem}.file-label{display:inline-flex;justify-content:center;align-items:center;gap:8px;cursor:pointer;border:1px dashed rgba(242,210,162,.65);border-radius:18px;padding:13px 17px;color:var(--gold);background:rgba(242,210,162,.06)}#songFile{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+
+    .song-name{font-size:.9rem;color:var(--muted);overflow-wrap:anywhere}.music-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px}
+
+    .surprise{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.surprise h2{font-family:'Aref Ruqaa',serif;font-size:clamp(2rem,7vw,3.5rem);color:var(--heading)}.surprise p{color:var(--muted)}
+
+    #overlay{position:fixed;inset:0;z-index:5;background:rgba(13,5,17,.94);display:none;place-items:center;padding:24px;overflow:auto}#overlay.show{display:grid;animation:fade .4s ease} .reveal{width:min(650px,100%);text-align:center}.reveal .big{font-size:clamp(4rem,18vw,8rem);animation:heartbeat 1.8s infinite;display:block}.reveal h2{font-family:'Aref Ruqaa',serif;font-size:clamp(2rem,7vw,3.8rem);line-height:1.6;color:var(--heading)}.reveal p{font-size:1.15rem;color:var(--muted)}
+
+    footer{text-align:center;color:#a9849c;font-size:.85rem;padding-top:20px}
+
+    @keyframes heartbeat{0%,100%{transform:scale(1)}12%{transform:scale(1.09)}24%{transform:scale(1)}36%{transform:scale(1.05)}}
+
+    @keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}@keyframes fade{from{opacity:0}to{opacity:1}}
+
+    @media(max-width:480px){.wrap{padding:18px 14px 48px}.topbar{align-items:flex-start}.brand{font-size:1.25rem}.pill{font-size:.75rem;padding:6px 10px}.hero{min-height:70vh}.primary,.secondary,.music-btn{padding:11px 18px}}
+
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+  </style>
+
+</head>
+
+<body>
+
+  <canvas id="sky" aria-hidden="true"></canvas><div class="glow"></div><div class="glow two"></div>
+
+  <div class="wrap">
+
+    <header class="topbar"><div class="brand">Nino ♡</div><div class="pill">تفاصيل صغيرة… ومعنى كبير</div></header>
+
+    <main>
+
+      <section class="hero" id="home">
+
+        <span class="heart" aria-hidden="true">♡</span>
+
+        <h1 id="heroTitle">نينو حبيبي، أنا آسف يا قلبي وحقك عليا من كل قلبي ❤️</h1>
+
+        <p id="heroIntro">وعشان خاطر عيونك الحلوين هعمل كل حاجة عشانك وأصلح اللي فات بيني وبينك يا عيوني. ❤️</p>
+
+        <button class="primary" id="startBtn">ابدأ الحكاية ✨</button>
+
+      </section>
+
+
+
+      <section class="section" id="words">
+
+        <div class="eyebrow" id="quoteEyebrow">كلام من القلب</div><h2 id="quoteHeading">أنا فهمت غلط… وحقك عليا</h2>
+
+        <div class="quote" id="quote" aria-live="polite">أنا عارف إني مكنتش مدرك ولا مقدّر زعلك، وكنت فاكر إنك لازم متزعليش، بس أنا كنت غلطان وادركت ده متأخر أوي.</div>
+
+        <div class="actions"><button class="primary" id="newQuote">كلمة جديدة ♡</button><button class="secondary" id="copyQuote">انسخ الكلام</button></div>
+
+      </section>
+
+
+
+      <section class="section">
+
+        <div class="eyebrow">رسالة ليك</div><h2>رسالة مستنياك 💌</h2>
+
+        <button class="letter-btn" id="letterBtn" aria-label="افتح الرسالة" aria-expanded="false">💌</button>
+
+        <div class="letter" id="letter">أنا عارف إني مكنتش مدرك ولا مقدّر زعلك، وكنت شايف إنك لازم متزعليش، وكأني مش فاهم إن ليكي حق تزعلي وتتضايقي. بس بجد أنا كنت غلطان، وادركت ده متأخر أوي. أنا ندمان على كل لحظة زعلتك فيها أو مفهمتكيش فيها. ومش حابب أخسرك أبدًا. هثبتلك حبي بأفعالي، وهطمنك من تاني، وهقربك لقلبي يا عيوني إنتِ. مش عايز اعتذاري يكون مجرد كلام؛ عايزه يكون أفعال تشوفيها وتحسي بيها. ❤️</div>
+
+      </section>
+
+
+
+      <section class="section" id="music">
+
+        <div class="eyebrow">لحن الحكاية</div><h2>اختار الأغنية اللي بتحبها 🎶</h2>
+
+        <div class="music-panel">
+
+          <p>اختار أغنية من جهازك، وشغّلها هنا وخليها خلفية للحظة دي.</p>
+
+          <div><label class="file-label" for="songFile">🎵 اختار أغنية</label><input id="songFile" type="file" accept="audio/*"></div>
+
+          <div class="song-name" id="songName" aria-live="polite">مفيش أغنية مختارة لسه</div>
+
+         <audio id="audio" preload="metadata" loop>
+
+
+        </audio>
+
+
+
+          <div class="music-row"><button class="primary" id="playBtn">▶ شغّل الأغنية</button><button class="secondary" id="stopBtn">■ إيقاف</button></div>
+
+          <p>ملحوظة: الأغنية بتتفتح من جهازك الحالي. لو هتشارك الصفحة مع حد، لازم تبعت ملف الأغنية مع الصفحة أو تستخدم رابطًا مباشرًا لها.</p>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="surprise">
+
+        <div class="eyebrow">كلمة أخيرة من قلبي…</div><h2>لسه في كلام عايز أقولهولك…</h2><p>اضغطي وافتحي آخر رسالة مني ليكي ❤️</p>
+
+        <button class="primary" id="surpriseBtn">افتحي رسالتي ❤️</button>
+
+      </section>
+
+    </main>
+
+    <footer id="siteFooter">اعتذار برمجي مخصوص لـ Nino، من قلب بيحبك ❤️</footer>
+
+  </div>
+
+
+
+  <div id="overlay" role="dialog" aria-modal="true" aria-labelledby="revealTitle">
+
+    <div class="reveal"><span class="big">💗</span><h2 id="revealTitle">اعتذار برمجي لأجمل عيون في الدنيا ❤️</h2><p id="revealText">يا Nino، أتمنى تفضل أيامنا مليانة كلام وضحك وذكريات حلوة. يمكن مش بعرف أعبّر كل مرة، لكن وجودك له مكانة خاصة، وكل لحظة حلوة بتعدّي بتخليني أتمنى لحظات أكتر. ❤️
+
+   خليك فاكر إن في حد بيتمنالك الخير والفرحة، وبيحب يشوفك دايمًا مبسوط وناجح. يا رب اللي جاي يكون أجمل. ❤️</p><p id="revealClosing">وعد مني أحاول كل يوم أكون أحنّ وأفهمك وأثبتلك حبي بالفعل قبل الكلام. ❤️🌹</p><button class="primary" id="closeOverlay">ارجعي للحكاية</button></div>
+
+  </div>
+
+
+
+  <script>
+
+    const quotes = [
+
+      'أنا مش حابب أخسرك يا Nino، وندمان على كل لحظة زعلتك فيها أو مكنتش فاهمك فيها. إنتِ غالية عندي، وعايز أصلح اللي فات بينا. ❤️',
+
+      'أنا فهمت إن زعلك كان محتاج مني أسمعك وأفهمك، مش أقولك إنك متزعليش. حقك عليا يا قلبي، وآسف إني فهمت ده متأخر. ❤️',
+
+      'مش عايز أوعدك بكلام وخلاص؛ أنا عايز أثبتلك حبي بأفعالي، وأطمنك من تاني، وأكون أقرب ليكي وأفهمك وأقدّر إحساسك. ❤️',
+
+      'عيونك يا Nino من أجمل الحاجات اللي بحبها فيكي، ونفسي أفضل أشوف الفرحة فيها، ومكونش أبدًا سبب في زعلها. ❤️',
+
+      'نفسي أكون في حضنك، أحس بالأمان والراحة، وأنسى الدنيا كلها وأنا جنبك. حضنك بالنسبالي راحة وطمأنينة يا عيوني. ❤️'
+
+    ];
+
+    const quoteEl = document.getElementById('quote');
+
+    let lastIndex = -1;
+
+    function newQuote(){
+
+      let i; do { i = Math.floor(Math.random() * quotes.length); } while (quotes.length > 1 && i === lastIndex);
+
+      lastIndex = i; quoteEl.style.opacity = 0;
+
+      setTimeout(() => { quoteEl.textContent = quotes[i]; quoteEl.style.opacity = 1; burst(innerWidth/2, innerHeight*.52, 16); }, 180);
+
+    }
+
+    document.getElementById('newQuote').addEventListener('click', newQuote);
+
+    document.getElementById('startBtn').addEventListener('click', () => document.getElementById('words').scrollIntoView({behavior:'smooth'}));
+
+    document.getElementById('copyQuote').addEventListener('click', async () => {
+
+      const btn = document.getElementById('copyQuote');
+
+      try { await navigator.clipboard.writeText(quoteEl.textContent); btn.textContent = 'اتنسخت ❤️'; }
+
+      catch { btn.textContent = 'حدد الكلام وانسخه'; }
+
+      setTimeout(() => btn.textContent = 'انسخ الكلام', 1800);
+
+    });
+
+    const letter = document.getElementById('letter'), letterBtn = document.getElementById('letterBtn');
+
+    letterBtn.addEventListener('click', () => { const open = letter.classList.toggle('open'); letterBtn.setAttribute('aria-expanded', String(open)); letterBtn.textContent = open ? '💗' : '💌'; if(open) letter.scrollIntoView({behavior:'smooth',block:'nearest'}); });
+
+
+
+    // Pick a local audio file. It is not uploaded anywhere.
+
+    const fileInput = document.getElementById('songFile'), audio = document.getElementById('audio'), songName = document.getElementById('songName');
+
+    let objectUrl = null;
+
+    fileInput.addEventListener('change', () => {
+
+      const file = fileInput.files && fileInput.files[0]; if (!file) return;
+
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+
+      objectUrl = URL.createObjectURL(file); audio.src = objectUrl; songName.textContent = 'الأغنية المختارة: ' + file.name;
+
+      document.getElementById('playBtn').textContent = '▶ شغّل الأغنية';
+
+    });
+
+    document.getElementById('playBtn').addEventListener('click', async () => {
+
+      if (!audio.src) { fileInput.click(); return; }
+
+      try { if (audio.paused) { await audio.play(); document.getElementById('playBtn').textContent = 'Ⅱ إيقاف مؤقت'; } else { audio.pause(); document.getElementById('playBtn').textContent = '▶ استكمال الأغنية'; } }
+
+      catch { songName.textContent = 'اختار ملف أغنية صالح وجرب تاني.'; }
+
+    });
+
+    document.getElementById('stopBtn').addEventListener('click', () => { audio.pause(); audio.currentTime = 0; document.getElementById('playBtn').textContent = '▶ شغّل الأغنية'; });
+
+    audio.addEventListener('ended', () => document.getElementById('playBtn').textContent = '▶ شغّل الأغنية');
+
+
+
+    const overlay = document.getElementById('overlay');
+    const closeOverlayBtn = document.getElementById('closeOverlay');
+    let previouslyFocused = null;
+
+    function openOverlay(){
+      previouslyFocused = document.activeElement;
+      overlay.classList.add('show');
+      closeOverlayBtn.focus();
+      burst(innerWidth/2, innerHeight/2, 90);
+    }
+
+    function closeOverlay(){
+      if (!overlay.classList.contains('show')) return;
+      overlay.classList.remove('show');
+      if (previouslyFocused instanceof HTMLElement) previouslyFocused.focus();
+    }
+
+    document.getElementById('surpriseBtn').addEventListener('click', openOverlay);
+    closeOverlayBtn.addEventListener('click', closeOverlay);
+    overlay.addEventListener('click', e => { if(e.target === overlay) closeOverlay(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeOverlay(); });
+
+
+
+    // Floating stars and tiny hearts on the canvas.
+
+    const canvas = document.getElementById('sky'), ctx = canvas.getContext('2d');
+
+    let w=0,h=0,dpr=1,particles=[];
+
+    function resize(){dpr=Math.min(window.devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);}
+
+    function rand(a,b){return Math.random()*(b-a)+a;}
+
+    function makeParticle(x=rand(0,w),y=rand(0,h),bursting=false){return {x,y,vx:bursting?rand(-3,3):rand(-.25,.25),vy:bursting?rand(-4,2):rand(-.65,-.15),size:rand(2,6),life:bursting?rand(45,95):Infinity,max:95,heart:Math.random()>.55,alpha:rand(.35,.9)}}
+
+    function burst(x,y,n){for(let i=0;i<n;i++)particles.push(makeParticle(x,y,true));}
+
+    const palette = getComputedStyle(document.documentElement);
+    function draw(){ctx.clearRect(0,0,w,h);for(let i=particles.length-1;i>=0;i--){const p=particles[i];p.x+=p.vx;p.y+=p.vy;if(Number.isFinite(p.life)){p.life--;p.vy+=.035;if(p.life<=0){particles.splice(i,1);continue;}}else if(p.y < -20){p.x=rand(0,w);p.y=h+10;}
+
+      ctx.globalAlpha=Number.isFinite(p.life)?Math.max(0,p.life/p.max)*p.alpha:p.alpha;ctx.fillStyle=p.heart?palette.getPropertyValue('--rose').trim():palette.getPropertyValue('--gold').trim();ctx.font=`${p.size*2.5}px serif`;ctx.fillText(p.heart?'♡':'✦',p.x,p.y);}
+
+      ctx.globalAlpha=1;requestAnimationFrame(draw);}
+
+    window.addEventListener('resize',resize);resize();for(let i=0;i<45;i++)particles.push(makeParticle());draw();
+
+  </script>
+
+</body>
+
+</html>
